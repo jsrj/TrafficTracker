@@ -22,25 +22,10 @@ try config.setup()
 let drop = try Droplet(config)
 try drop.setup()
 
-//drop.get("/") { request in
-//    return ">Hello Swift"
+//drop.get("heyo") { request in
+//    let name:String = "bob" //request.parameters["name"] == nil ? "noname" : request.parameters["name"]!.string!
+//    let worlds = ["mundu", "monde", "welt"]
+//    return try drop.view.make("base", ["name": name])
 //}
-
-//drop.get("get-test/:app-code/:key") { request in
-//    // app-code will be a randomly generated number that users will be assigned when registering.
-//    // key will be a generated hash for that user's particular app
-//
-//    // To return a response as a JSON object
-//    let dict: [String : String] = [
-//        "app-code": request.parameters["app-code"]!.string!,
-//        "key":      request.parameters["key"]!.string!
-//    ]
-//    return try dict.makeResponse()
-//}
-//
-drop.get("strong/:name") { request in
-    let name:String = request.parameters["name"] == nil ? "noname" : request.parameters["name"]!.string!
-    return try drop.view.make("strong.leaf", ["name" : name])
-}
 
 try drop.run()

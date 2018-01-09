@@ -17,3 +17,8 @@ div.welcome img {
   	transform: translateY(-50%);
 	width: 300px;
 }
+
+h1 {
+    display: inline-block;
+    margin: 0 auto;
+}
